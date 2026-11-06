@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "publication_status": "local preview; not published",
+  "publication_status": "public preview",
   "repositories": {
     "pypto-lib": {
       "url": "https://github.com/vloncar/pypto-lib.git",

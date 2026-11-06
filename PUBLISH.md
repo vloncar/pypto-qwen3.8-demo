@@ -1,21 +1,25 @@
-# Publish when ready
+# Published preview and future updates
 
-Everything is currently local. Nothing in this preparation creates an upstream
-MR/PR. The two code branches are named `preview/qwen3.8-27b`; exact commits and
-planned GitHub URLs are in `versions.json`.
+The preview is public under `vloncar` on GitHub:
 
-When publication is authorized:
+- [pypto-lib preview branch](https://github.com/vloncar/pypto-lib/tree/preview/qwen3.8-27b)
+- [pypto-serving preview branch](https://github.com/vloncar/pypto-serving/tree/preview/qwen3.8-27b)
+- [Companion repository](https://github.com/vloncar/pypto-qwen3.8-demo)
 
-1. Push the pypto-lib preview branch to `vloncar/pypto-lib`.
-2. Create/use a `vloncar/pypto-serving` fork and push its preview branch.
-3. Create `vloncar/pypto-qwen3.8-demo` and publish this repository's `main` branch.
-4. Verify both remote commits match `versions.json`. Update the local-preview
-   notice in README and `versions.json` only after the URLs resolve. Refresh
-   the bundle hashes with `python3 freeze_bundle.py`, run the checks in
-   CONTRIBUTING, then commit and push that documentation/status update.
-5. Test a fresh clone using the default URLs in `checkout.py`, run a new complete
-   host comparison if making a claim about these exact preview commits, and
-   replace `<repo-link>` in `SHARE.md` before sharing the message.
+Exact code commits and source URLs are in [versions.json](versions.json).
+The [group-chat message](SHARE.md) links to this repository. Publishing these
+previews does not create an upstream MR/PR.
+
+For a later preview update:
+
+1. Validate and push the new kernel/serving revisions, then update the exact
+   commits and source hashes in this companion repository.
+2. Refresh the bundle with `python3 freeze_bundle.py` and run the checks in
+   CONTRIBUTING. Keep old benchmark bundles and results intact so their
+   original integrity checks remain usable.
+3. Test `checkout.py` in a fresh directory using the public URLs.
+4. Run a complete matched host comparison before claiming a new performance
+   result against vLLM, and update the results and announcement accordingly.
 
 The existing review branches remain separate. Upstreaming still needs review
 against the actual base revisions, logical commit splitting and dependency

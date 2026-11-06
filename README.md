@@ -6,20 +6,21 @@ model, from embedding through prefill, decode and vocabulary projection.
 The CPU handles weight preparation, request metadata, scheduling and sampling.
 Model arithmetic and cache updates execute on the NPU.
 
-The latest matched reference comparison reached **12.05 output tokens/s with
-PyPTO versus 12.21 with default, graph-enabled vLLM-Ascend** on one Ascend 910B2.
+The retained tuning reached **12.085 output tokens/s (about 12.1)** in the
+internal PyPTO comparison, up from 12.058 (+0.22%). The latest matched vendor
+comparison reached **12.05 output tokens/s with PyPTO versus 12.21 with default,
+graph-enabled vLLM-Ascend** on one Ascend 910B2.
 That is near parity on a small, fixed workload, not an established performance
 win. All 4,800 generated token IDs matched across 600 requests. See
 [results and limitations](RESULTS.md) before quoting these numbers.
 
-**Publication status: local preview.** The branch/repository URLs in
-[versions.json](versions.json) are planned destinations and are not yet
-published. Use local checkout overrides in the [setup guide](SETUP.md) today.
+The preview branches and this guide are public. The [setup guide](SETUP.md)
+checks out the exact revisions in [versions.json](versions.json).
 
 | Component | Preview branch | Role |
 |---|---|---|
-| pypto-lib | `preview/qwen3.8-27b` | Kernels, model composition, HOST factories, capability manifest and numerical validation |
-| pypto-serving | `preview/qwen3.8-27b` | Checkpoint staging, hybrid caches, request scheduling, runners, CLI and HTTP service |
+| [pypto-lib](https://github.com/vloncar/pypto-lib/tree/preview/qwen3.8-27b) | `preview/qwen3.8-27b` | Kernels, model composition, HOST factories, capability manifest and numerical validation |
+| [pypto-serving](https://github.com/vloncar/pypto-serving/tree/preview/qwen3.8-27b) | `preview/qwen3.8-27b` | Checkpoint staging, hybrid caches, request scheduling, runners, CLI and HTTP service |
 | This repository | `main` | Pinned setup, generation commands, matched vLLM benchmark and reference results |
 
 Exact source commits, compiler/runtime revisions and vendor image digest are
@@ -34,7 +35,7 @@ commit splitting remain separate work.
 2. [Run the matched benchmark against default and eager vLLM](BENCHMARK.md).
 3. [Read the measured results and correctness scope](RESULTS.md).
 4. [Inspect package validation](VALIDATION.md).
-5. [Publish later](PUBLISH.md), then use the [short announcement](SHARE.md).
+5. [Publication status and updates](PUBLISH.md), with a [short announcement](SHARE.md).
 
 The supported path is text-only, TP=EP=1, with independent replicas possible.
 The complete serving comparison validates concurrency two, context 4096 and a

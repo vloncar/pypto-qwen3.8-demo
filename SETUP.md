@@ -16,15 +16,17 @@ allocator installed; that service is not included in this repository.
 
 ## Get the exact sources
 
-From this repository, choose a workspace:
+Choose a workspace and clone the companion repository:
 
 ```bash
 export QWEN_WORKSPACE="$HOME/qwen-pypto"
+mkdir -p "$QWEN_WORKSPACE"
+git clone https://github.com/vloncar/pypto-qwen3.8-demo.git "$QWEN_WORKSPACE/pypto-qwen3.8-demo"
+cd "$QWEN_WORKSPACE/pypto-qwen3.8-demo"
 python3 checkout.py "$QWEN_WORKSPACE"
 ```
 
-**Before publication**, the two fork revisions cannot be downloaded. Instead,
-use the existing local checkouts as clone sources:
+Alternatively, existing local checkouts can supply the pinned commits:
 
 ```bash
 python3 checkout.py "$QWEN_WORKSPACE" \
