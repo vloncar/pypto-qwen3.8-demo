@@ -35,7 +35,7 @@ commit splitting remain separate work.
 2. [Run the matched benchmark against default and eager vLLM](BENCHMARK.md).
 3. [Read the measured results and correctness scope](RESULTS.md).
 4. [Inspect package validation](VALIDATION.md).
-5. [Publication status and updates](PUBLISH.md), with a [short announcement](SHARE.md).
+5. [Publication status and updates](PUBLISH.md).
 
 The supported path is text-only, TP=EP=1, with independent replicas possible.
 The complete serving comparison validates concurrency two, context 4096 and a

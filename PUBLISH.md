@@ -7,8 +7,7 @@ The preview is public under `vloncar` on GitHub:
 - [Companion repository](https://github.com/vloncar/pypto-qwen3.8-demo)
 
 Exact code commits and source URLs are in [versions.json](versions.json).
-The [group-chat message](SHARE.md) links to this repository. Publishing these
-previews does not create an upstream MR/PR.
+Publishing these previews does not create an upstream MR/PR.
 
 For a later preview update:
 
@@ -19,7 +18,7 @@ For a later preview update:
    original integrity checks remain usable.
 3. Test `checkout.py` in a fresh directory using the public URLs.
 4. Run a complete matched host comparison before claiming a new performance
-   result against vLLM, and update the results and announcement accordingly.
+   result against vLLM, and update the results accordingly.
 
 The existing review branches remain separate. Upstreaming still needs review
 against the actual base revisions, logical commit splitting and dependency
