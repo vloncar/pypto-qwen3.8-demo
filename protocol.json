@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "name": "qwen3.8-pypto-preview",
+  "order": [
+    "pypto",
+    "vllm-default",
+    "vllm-eager",
+    "vllm-eager",
+    "vllm-default",
+    "pypto"
+  ],
+  "warmup_rounds_per_block": 5,
+  "measured_rounds_per_block": 20,
+  "threads_env": 16,
+  "card": "0",
+  "round_timeout_s": 300,
+  "block_timeout_s": 3600,
+  "timing": "streaming engine; client semaphore admission through terminal event; round through all requests",
+  "persistence": "before warmup and after block; no per-round print or file write",
+  "profiling": false,
+  "cpu_policy": "same allowed CPU set and Docker CPU quota; OMP/MKL=16; retain and audit engine internal defaults",
+  "failed_mode_policy": "retain failed blocks and continue; full comparison requires all six blocks to pass"
+}

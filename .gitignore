@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+.pytest_cache/
+config.local.json
+environment.local.sh
+results-*/
+build_output/
+*.log

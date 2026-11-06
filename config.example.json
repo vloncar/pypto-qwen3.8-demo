@@ -1,0 +1,7 @@
+{
+  "dev_container": "pypto-dev",
+  "dev_python": "/workspace/qwen/.venv/bin/python",
+  "dev_env": "/workspace/qwen/pypto-qwen3.8-demo/environment.local.sh",
+  "dev_checkpoint": "/models/qwen/checkpoint",
+  "dev_results_root": "/workspace/qwen/results"
+}
